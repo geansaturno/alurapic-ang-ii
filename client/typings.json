@@ -1,0 +1,8 @@
+{
+  "name": "client",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "jquery": "registry:dt/jquery#2.0.0+20160303223636"
+  }
+}
