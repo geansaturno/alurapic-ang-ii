@@ -6,5 +6,4 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_PROVIDERS} from "angular2/router";
 import {FotoService} from '../app/foto/services/foto-service';
 
-
 bootstrap(App, [HTTP_PROVIDERS, ROUTER_PROVIDERS, FotoService]);

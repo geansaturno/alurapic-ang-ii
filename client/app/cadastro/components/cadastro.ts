@@ -21,7 +21,7 @@ export class Cadastro {
     router: Router;
 
     constructor(fotoService: FotoService, fb: FormBuilder, params: RouteParams, router: Router) {
-        console.log(router.registry)
+      
         this.router = router;
         this.fotoService = fotoService;
         this.meuForm = fb.group({

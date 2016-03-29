@@ -1,4 +1,4 @@
-import {Component, Input, ElementRef} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 
 @Component({
     selector: 'foto',
