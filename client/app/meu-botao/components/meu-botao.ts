@@ -14,6 +14,7 @@ export class MeuBotao {
     @Output() acao: EventEmitter<any> = new EventEmitter<any>();
   
     executaAcao() {
+        // se não usar [confirmacao] na view vem como string!
         if(this.confirmacao) {
             if(confirm('Tem certeza?')) {
                 this.acao.emit(null); 

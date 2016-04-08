@@ -7,11 +7,12 @@ import {Painel} from '../../painel/components/painel';
 import {FiltroPorTitulo} from '../../foto/pipes/filtro-por-titulo';
 import {FotoService} from '../../foto/services/foto-service';
 import {MeuBotao} from '../../meu-botao/components/meu-botao';
+import {Modal} from '../../modal/components/modal';
 
 @Component({
     selector: 'principal',
     templateUrl: 'app/principal/components/principal.html',
-    directives: [Foto, Painel, ROUTER_DIRECTIVES, MeuBotao],
+    directives: [Foto, Painel, ROUTER_DIRECTIVES, MeuBotao, Modal],
     pipes: [FiltroPorTitulo]
 })
 export class Principal {

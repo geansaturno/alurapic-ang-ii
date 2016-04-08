@@ -17,6 +17,7 @@
     "bootstrap": "^3.3.6",
     "es6-shim": "^0.35.0",
     "jquery": "^2.2.2",
+    "jqueryui-browser": "^1.10.2-1",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "systemjs": "^0.19.24",

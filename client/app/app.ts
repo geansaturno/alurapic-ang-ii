@@ -33,6 +33,7 @@ let rotas: any[] = [
     selector: 'app',
     templateUrl: 'app/app.html',
     directives: [ROUTER_DIRECTIVES],
+    providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS, FotoService]
    
 
 })
