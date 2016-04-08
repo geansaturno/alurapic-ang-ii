@@ -6,7 +6,7 @@ import {Component, Input, OnInit, ViewEncapsulation, ElementRef} from 'angular2/
     styleUrls: ['app/painel/components/painel.css'],
     encapsulation: ViewEncapsulation.Emulated
 })
-export class Painel implements OnInit{
+export class Painel implements OnInit {
 
     @Input() titulo: string;
     private elemento: ElementRef;

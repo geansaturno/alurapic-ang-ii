@@ -1,7 +1,9 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 import {Principal} from './principal/components/principal';
 import {Cadastro} from './cadastro/components/cadastro';
+import {HTTP_PROVIDERS} from 'angular2/http';
+import {FotoService} from '../app/foto/services/foto-service';
 
 let rotas: any[] = [
     { 
@@ -30,7 +32,8 @@ let rotas: any[] = [
 @Component({
     selector: 'app',
     templateUrl: 'app/app.html',
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
+   
 
 })
 @RouteConfig(rotas)
@@ -43,4 +46,4 @@ export class App {
         .map(rota => rota.name);
     }
     
-}
+} 
