@@ -22,8 +22,9 @@
         </div> <!-- fim col-md-12 -->
     </div> <!-- fim row -->
     <br>
+    
     <div class="row">
-        <painel #painel *ngFor="#foto of fotos | filtroPorTitulo:textoProcurado.value; #i = index" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
+        <painel #painel *ngFor="let foto of fotos | filtroPorTitulo:textoProcurado.value; let i = index" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
              <a [routerLink]="['Alterar', {id : foto._id}]">
                 <foto titulo="{{foto.titulo}}" url="{{foto.url}}"></foto>
             </a>

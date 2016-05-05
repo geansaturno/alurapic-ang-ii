@@ -3,6 +3,8 @@
   "version": false,
   "dependencies": {},
   "ambientDependencies": {
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
     "jquery": "registry:dt/jquery#1.10.0+20160316155526",
     "jqueryui": "registry:dt/jqueryui#1.9.0+20160317120654"
   }

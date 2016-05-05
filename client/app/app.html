@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
-      <li *ngFor="#rota of rotas"><a [routerLink]="[rota]">{{rota}}</a></li>
+      <li *ngFor="let rota of rotas"><a [routerLink]="[rota]">{{rota}}</a></li>
     </ul>
 </nav>
 <router-outlet></router-outlet>

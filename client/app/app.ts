@@ -1,8 +1,8 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
+import {Component} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated'
 import {Principal} from './principal/components/principal';
 import {Cadastro} from './cadastro/components/cadastro';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {HTTP_PROVIDERS} from '@angular/http';
 import {FotoService} from '../app/foto/services/foto-service';
 
 let rotas: any[] = [

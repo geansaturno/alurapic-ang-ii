@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild, AfterViewInit, Output, Input, EventEmitter} from 'angular2/core';
+import {Component, ElementRef, ViewChild, AfterViewInit, Output, Input, EventEmitter} from '@angular/core';
 
 
 @Component({

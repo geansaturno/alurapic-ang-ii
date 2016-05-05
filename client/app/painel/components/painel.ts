@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation, ElementRef} from 'angular2/core';
+import {Component, Input, OnInit, ViewEncapsulation, ElementRef} from '@angular/core';
 
 @Component({
     selector: 'painel',

@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform} from 'angular2/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {Foto} from '../components/foto';
 
 @Pipe({
@@ -6,9 +6,11 @@ import {Foto} from '../components/foto';
 })
 export class FiltroPorTitulo implements PipeTransform {
 
-    transform(fotos: Foto[], digitado: string[]): Foto[] {
+    transform(fotos: Foto[], digitado: string): Foto[] {
         // captura o que foi digitado
-        let filtro: string = digitado[0].toLocaleLowerCase();
+        
+        let filtro: string = digitado ? digitado.toLocaleLowerCase() : '';
+       
         // se tem filtro, retorna a lista filtrada
         return filtro ? fotos.filter(foto=> foto.titulo.toLocaleLowerCase().indexOf(filtro) != -1) : fotos;
     }

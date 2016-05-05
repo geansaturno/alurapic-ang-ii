@@ -1,7 +1,7 @@
-import {Component} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {ControlGroup, FormBuilder, Validators} from 'angular2/common';
+import {Component} from '@angular/core';
+import {Http} from '@angular/http';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from '@angular/router-deprecated';
+import {ControlGroup, FormBuilder, Validators} from '@angular/common';
 import {Foto} from '../../foto/components/foto';
 import {Validadores} from '../../foto/validators/validadores';
 import {FotoService} from '../../foto/services/foto-service';
