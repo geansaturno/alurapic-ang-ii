@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Http} from '@angular/http';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from '@angular/router-deprecated';
-import {ControlGroup, FormBuilder, Validators} from '@angular/common';
+import {FormGroup, FormBuilder, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, Validators} from '@angular/forms';
 import {Foto} from '../../foto/components/foto';
 import {Validadores} from '../../foto/validators/validadores';
 import {FotoService} from '../../foto/services/foto-service';
@@ -10,28 +10,30 @@ import {MeuBotao} from '../../meu-botao/components/meu-botao';
 @Component({
     selector: 'cadastro',
     templateUrl: 'app/cadastro/components/cadastro.html',
-    directives: [Foto, ROUTER_DIRECTIVES, MeuBotao]
+    directives: [Foto, MeuBotao, ROUTER_DIRECTIVES, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES]
 })
 export class Cadastro {
 
     foto: Foto = new Foto();
     fotoService: FotoService;
-    meuForm: ControlGroup;
+    meuForm: FormGroup;
     mensagem: string = '';
     router: Router;
 
-    constructor(fotoService: FotoService, fb: FormBuilder, params: RouteParams, router: Router) {
+    constructor(fotoService: FotoService, params: RouteParams, router: Router, fb: FormBuilder) {
       
         this.router = router;
-        this.fotoService = fotoService;
+
         this.meuForm = fb.group({
 
             titulo: ['', Validators.compose(
-                [Validators.minLength(4), Validators.required, Validadores.comecaComMaiuscula]
+                [Validators.required, Validators.minLength(4),  Validadores.comecaComMaiuscula]
             )],
-            url: ['', Validators.required]
+            url: ['', Validators.required],
+            descricao: ['']
         });
-        
+
+        this.fotoService = fotoService;
         this.buscaFotoPorId(params.get('id'));
     } 
     

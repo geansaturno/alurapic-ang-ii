@@ -5,49 +5,57 @@
 	    <h1>{{foto.titulo}}</h1>
 	</div>
 
-	<form [ngFormModel]="meuForm" (submit)="cadastrar()" class="row">
+	<form [formGroup]="meuForm" (submit)="cadastrar()" class="row">
 	    <div class="col-md-6">
 	        <div class="form-group">
 	            <label>Título</label>
-	            <input 
-                    #titulo = "ngForm" 
-                    ngControl="titulo" 
-                    [(ngModel)]="foto.titulo" 
-                    class="form-control">
-                <div *ngIf="!titulo.valid">
-                    <span *ngIf="titulo.errors.required" class="form-control alert-danger">
-                           Título obrigatório
-                    </span>
-                    <span *ngIf="titulo.errors.minlength" class="form-control alert-danger">
-                        Título deve ter no mínimo 4 caracteres
-                    </span>
-                    <span *ngIf="titulo.errors.comecaComMaiuscula" class="alert-danger form-control">
-                         Deve começar em maiúsculo
-                    </span>    
-               </div>
+	            <input  
+					name="titulo" 
+					[(ngModel)]="foto.titulo" 
+					formControlName="titulo" 
+                    class="form-control" autocomplete="off">
+
+					<div *ngIf="!meuForm.controls.titulo.valid">
+						
+						<span *ngIf="meuForm.controls.titulo.errors.required" class="form-control alert-danger">
+							Título obrigatório
+						</span>
+
+						<span *ngIf="meuForm.controls.titulo.errors.minlength" class="form-control alert-danger">
+							Título deve ter no mínimo 4 caracteres
+						</span>
+
+						<span *ngIf="meuForm.controls.titulo.errors.comecaComMaiuscula" class="alert-danger form-control">
+							Deve começar em maiúsculo
+						</span>    
+     
+					</div>
 	        </div>
-	        <div class="form-group">
-	            <label>URL</label>
-	            <input 
-                    #url = 'ngForm'
-                    ngControl="url" 
-                    [(ngModel)]="foto.url"
-                    class="form-control">
-                <span *ngIf="!url.valid" class="form-control alert-danger">
-                    URL obrigatória
-                </span>
-	        </div>
-	        <div class="form-group">
-	            <label>Descrição</label>
-	            <textarea [(ngModel)]="foto.descricao" class="form-control">
-	            </textarea>
-	        </div>
-            
+
+			<div class="form-group">
+				<label>URL</label>
+				<input 
+					name="url" 
+					[(ngModel)]="foto.url" 
+					formControlName="url"  
+					class="form-control" autocomplete="off">
+					
+					<span *ngIf="!meuForm.controls.url.valid" class="form-control alert-danger">
+						URL obrigatória
+					</span> 	
+			</div>
+
+        	<div class="form-group">
+                <label>Descrição</label>
+                <textarea name="descricao" [(ngModel)]="foto.descricao" class="form-control">
+                </textarea>
+            </div>		
+			   
             <meu-botao 
                 nome="Salvar" 
                 tipo="submit" 
-                estilo="btn-primary" 
-                [desabilitado]="!meuForm.valid">
+                estilo="btn-primary"
+				[desabilitado]="!meuForm.valid">
             </meu-botao>
 	   
 	         <a [routerLink]="['Home']" class="btn btn-primary">Voltar</a>

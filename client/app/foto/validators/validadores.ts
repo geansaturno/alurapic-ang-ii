@@ -1,8 +1,8 @@
-import {Control} from '@angular/common';
+import {FormControl} from '@angular/forms';
 
 export class Validadores {
 
-    static comecaComMaiuscula(campo: Control) {
+    static comecaComMaiuscula(campo: FormControl) {
 
         let digitado: string = campo.value.trim();
         let primeiraLetra: string = digitado.substr(0, 1);
