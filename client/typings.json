@@ -1,11 +1,12 @@
 {
-  "name": "client",
-  "version": false,
-  "dependencies": {},
-  "ambientDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
-    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
-    "jqueryui": "registry:dt/jqueryui#1.9.0+20160317120654"
-  }
+	"name": "client",
+	"version": false,
+	"dependencies": {},
+	"globalDependencies": {
+		"core-js": "registry:dt/core-js#0.0.0+20160602141332",
+		"jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+		"jquery": "registry:dt/jquery#1.10.0+20160701124751",
+		"jqueryui": "registry:dt/jqueryui#1.9.0+20160627030821",
+		"node": "registry:dt/node#6.0.0+20160621231320"
+	}
 }

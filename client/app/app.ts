@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated'
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {Principal} from './principal/components/principal';
 import {Cadastro} from './cadastro/components/cadastro';
 import {HTTP_PROVIDERS} from '@angular/http';
