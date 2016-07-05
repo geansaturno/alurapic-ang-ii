@@ -11,7 +11,7 @@
             <form>
                  <div class="input-group">
                     <span class="input-group-btn">
-                        <a [routerLink]="['Nova']" class="btn btn-primary">
+                        <a [routerLink]="['/cadastro']" class="btn btn-primary">
                             Novo foto
                         </a>
                     </span>
@@ -25,7 +25,7 @@
     
     <div class="row">
         <painel #painel *ngFor="let foto of fotos | filtroPorTitulo:textoProcurado.value; let i = index" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
-             <a [routerLink]="['Alterar', {id : foto._id}]">
+             <a [routerLink]="['/cadastro', foto._id]">
                 <foto titulo="{{foto.titulo}}" url="{{foto.url}}"></foto>
             </a>
             <br>

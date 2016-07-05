@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {Foto} from '../../foto/components/foto';
 import {Painel} from '../../painel/components/painel';
 import {FiltroPorTitulo} from '../../foto/pipes/filtro-por-titulo';

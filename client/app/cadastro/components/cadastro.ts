@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Http} from '@angular/http';
-import {ROUTER_DIRECTIVES, RouteParams, Router} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES, Router, ActivatedRoute} from '@angular/router';
 import {FormGroup, FormBuilder, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, Validators} from '@angular/forms';
 import {Foto} from '../../foto/components/foto';
 import {Validadores} from '../../foto/validators/validadores';
@@ -10,7 +10,7 @@ import {MeuBotao} from '../../meu-botao/components/meu-botao';
 @Component({
     selector: 'cadastro',
     templateUrl: 'app/cadastro/components/cadastro.html',
-    directives: [Foto, MeuBotao, ROUTER_DIRECTIVES, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES]
+    directives: [Foto, ROUTER_DIRECTIVES, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, MeuBotao, ]
 })
 export class Cadastro {
 
@@ -19,10 +19,12 @@ export class Cadastro {
     meuForm: FormGroup;
     mensagem: string = '';
     router: Router;
+    route: ActivatedRoute;
 
-    constructor(fotoService: FotoService, params: RouteParams, router: Router, fb: FormBuilder) {
+    constructor(fotoService: FotoService, route: ActivatedRoute, router: Router, fb: FormBuilder) {
       
         this.router = router;
+        this.route = route;
 
         this.meuForm = fb.group({
 
@@ -34,9 +36,11 @@ export class Cadastro {
         });
 
         this.fotoService = fotoService;
-        this.buscaFotoPorId(params.get('id'));
+        this.route.params.subscribe(params => 
+            this.buscaFotoPorId(params['id']));
+        
     } 
-    
+
     buscaFotoPorId(id: string):void {
 
         if(id) {
@@ -58,7 +62,7 @@ export class Cadastro {
                 this.foto = new Foto();
                 this.mensagem = res.mensagem;
                 if(!res.inclusao) {
-                    this.router.navigate(['Home']);    
+                    this.router.navigate(['/']);    
                 }
             }, erro => {
                 console.log(erro);
