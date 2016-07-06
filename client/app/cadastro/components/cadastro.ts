@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Http} from '@angular/http';
-import { ROUTER_DIRECTIVES, Router, ActivatedRoute} from '@angular/router';
+import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from '@angular/router';
 import {FormGroup, FormBuilder, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, Validators} from '@angular/forms';
 import {Foto} from '../../foto/components/foto';
 import {Validadores} from '../../foto/validators/validadores';
@@ -10,7 +10,7 @@ import {MeuBotao} from '../../meu-botao/components/meu-botao';
 @Component({
     selector: 'cadastro',
     templateUrl: 'app/cadastro/components/cadastro.html',
-    directives: [Foto, ROUTER_DIRECTIVES, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, MeuBotao, ]
+    directives: [Foto, ROUTER_DIRECTIVES, FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, MeuBotao]
 })
 export class Cadastro {
 
@@ -23,9 +23,9 @@ export class Cadastro {
 
     constructor(fotoService: FotoService, route: ActivatedRoute, router: Router, fb: FormBuilder) {
       
-        this.router = router;
         this.route = route;
-
+        this.router = router;
+    
         this.meuForm = fb.group({
 
             titulo: ['', Validators.compose(

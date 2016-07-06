@@ -13,7 +13,7 @@
 					name="titulo" 
 					[(ngModel)]="foto.titulo" 
 					formControlName="titulo" 
-                    class="form-control" autocomplete="off">
+                    class="form-control">
 
 					<div *ngIf="!meuForm.controls.titulo.valid">
 						
@@ -38,7 +38,7 @@
 					name="url" 
 					[(ngModel)]="foto.url" 
 					formControlName="url"  
-					class="form-control" autocomplete="off">
+					class="form-control">
 					
 					<span *ngIf="!meuForm.controls.url.valid" class="form-control alert-danger">
 						URL obrigatória
