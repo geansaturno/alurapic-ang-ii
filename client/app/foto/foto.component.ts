@@ -6,8 +6,9 @@ import { Component, Input } from '@angular/core';
     templateUrl: './foto.component.html'
 })
 export class FotoComponent {
-    @Input() titulo;
-    @Input() url;
+    @Input() titulo: string;
+    @Input() url: string;
+    descricao: string;
 
     constructor(){
         console.log('Construtor do foto');
