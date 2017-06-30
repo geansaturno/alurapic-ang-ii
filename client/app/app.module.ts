@@ -9,9 +9,19 @@ import { PainelModule }         from './painel/painel.module';
 import { MenuModule }           from './menu/menu.module';
 import { HttpModule }           from '@angular/http';
 import { routing }              from './app.routes';
+import { FormsModule, ReactiveFormsModule}           from '@angular/forms';
 
 @NgModule({
-    imports: [BrowserModule, FotoModule, FooterModule, MenuModule, PainelModule, HttpModule, routing],
+    imports: [
+        BrowserModule, 
+        FormsModule, 
+        FotoModule, 
+        FooterModule, 
+        MenuModule, 
+        PainelModule, 
+        HttpModule, 
+        ReactiveFormsModule,
+        routing],
     declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
     bootstrap: [ AppComponent ]
 })
