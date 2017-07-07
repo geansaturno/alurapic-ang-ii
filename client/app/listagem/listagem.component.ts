@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/map'; // novidade!
+import { FotoService } from "../foto/foto.service";
+import { FotoComponent } from "../foto/foto.component";
 
 @Component({
     moduleId: module.id,
@@ -10,13 +10,11 @@ import 'rxjs/add/operator/map'; // novidade!
 
 export class ListagemComponent {
     
-    fotos : Object[] = [];
+    fotos : FotoComponent[] = [];
 
-    constructor(http: Http){
+    constructor(fotoService: FotoService){
 
-        http.get('v1/fotos').map(res => res.json()).subscribe(fotos => {
-            this.fotos = fotos;
-            console.log(this.fotos);
-        });
+        fotoService.list().subscribe(fotos => this.fotos = fotos, erro => console.log(erro))
+
     }
 }

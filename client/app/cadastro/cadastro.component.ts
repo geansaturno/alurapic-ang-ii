@@ -1,7 +1,7 @@
-import {Component}      from '@angular/core';
-import {FotoComponent}  from '../foto/foto.component';
-import {Http, Headers}  from '@angular/http';
-import {FormBuilder, FormGroup, Validators}  from '@angular/forms';
+import { Component } from '@angular/core'
+import { FotoComponent } from '../foto/foto.component'
+import { FotoService } from "../foto/foto.service"
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
     moduleId: module.id,
@@ -9,35 +9,28 @@ import {FormBuilder, FormGroup, Validators}  from '@angular/forms';
     templateUrl: './cadastro.component.html'
 })
 export class CadastroComponent {
-    
-    foto: FotoComponent = new FotoComponent();
-    http: Http;
-    formCadastro: FormGroup;
 
+    foto: FotoComponent = new FotoComponent()
+    formCadastro: FormGroup
+    fotoService: FotoService
 
-    constructor(http: Http, fb: FormBuilder){
-        this.http = http;
+    constructor(fb: FormBuilder) {
 
         this.formCadastro = fb.group({
             titulo: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
             url: ['', Validators.required],
             descricao: ['']
-        });
+        })
 
     }
-    
+
     cadastrar(event: Event) {
-        event.preventDefault();
-        console.log(this.foto);
+        event.preventDefault()
+        console.log(this.foto)
 
-        let headers = new Headers();
+        //servico
 
-        headers.append('Content-Type', 'application/json');
 
-        this.http.post('v1/fotos', JSON.stringify(this.foto), {headers: headers})
-        .subscribe(result => {
-            this.foto = new FotoComponent();
-        });
 
     }
 }
